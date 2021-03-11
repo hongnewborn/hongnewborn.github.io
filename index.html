@@ -152,6 +152,118 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Day1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: Day1<br>date: 2021-03-11 08:58:51<br>tags:</p>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><ol>
+<li>引用类型：String</li>
+<li>new :创建对象</li>
+<li>寄存器（处理器内部）<br>堆栈（位于通用RAM)<br>堆（位于RAM） ：存放所有java对象<br>常量存储 ：常量值一般直接存储在程序代码内部<br>非RAM存储</li>
+<li>基本数据类型<br>boolean                     1个字节             ture  false<br>char           16bit        2个字节             0-65535<br>byte            8bits        1个字节            -128-127<br>short          16bits      2个字节            -32768-32767<br>int               32bits      4个字节         -2147483648-2147483647<br>long            64bits      8个字节<br>float           32bits       4个字节<br>double       64bits       8个字节</li>
+<li>作用域<br>变量的作用域是变量的有效范围，在作用域中变量可以重新赋值，不能重名</li>
+<li>类 ：class关键字</li>
+<li>字段<br>方法 ：包括名称，参数，返回值和方法体<br>方法必须通过对象才能调用<br>对象名.方法名（参数） </li>
+<li>关键字 ：return 返回数值<br>import ：指示编译器导入类库<br>static ：引用static变量可以通过对象也可以通过类名（首选）<br>静态变量<br>静态方法<br>static字段对每个类都只有一份存储空间<br>非static字段对每个对象都有一份存空间 </li>
+<li>第一个程序<br>类名与文件名要相同<br>类中必须有main()方法，其为程序入口 </li>
+<li>注释<br>单行注释 ： //<br>多行注释 ：/*<br>  */ </li>
+<li>标志符</li>
+</ol>
+<ul>
+<li>包括类名，方法名，接口名，变量名，常量名</li>
+<li>只能有字母，数字，下划线 ,美元符号组成，不能由数字开头，且严格区分大小写</li>
+<li>规范：驼峰规则<br>类名，接口名 ：首字母大写，后面每个单词首字母大写<br>方法名，变量名 ：首字母小写，后面每个单词首字母大写<br>常量名 ：全部大写             </li>
+</ul>
+<ol start="12">
+<li>数据类型: 基本数据类型 <ul>
+<li>整数型  byte short int long</li>
+<li>浮点型 float double</li>
+<li>布尔型 boolean</li>
+<li>字符型 char<br>引用数据类型  类，接口，数组<br>注：字符串属于引用数据类型，只能使用双引号，字符只能使用单引号          </li>
+</ul>
+</li>
+<li>ASCII码<br> ‘a’ –&gt; 97 [01100001]<br> ‘A’ –&gt; 65<br> ‘0’ –&gt; 48<br> ‘a’   —–&gt; 01100001        解码<br> 01100001  ——-&gt;  ‘a’      编码          </li>
+<li>成员变量（在类体中声明的）没有手动赋值系统会默认赋值<br> 局部变量（方法体中声明的）没有赋值不能访问<br> 变量要遵守先声明在赋值的法则 </li>
+<li>转义字符  \  (在java中表示转义，要想表示反斜杠，要用 ‘ \ ‘ )<br> \n  : 换行符（是一个字符，属于char类型）<br> \t  :  制表符（tab） 与空格不同<br> &#39;  :  输出字符单引号<br> ‘ “ ‘ : 输出字符双引号<br> &quot;  :  字符双引号<br> \u4e2d : \u表示后面的数是某个汉字的unicode编码 </li>
+<li>JDK中带的native2ascii.exe命令，可以将中文转换成unicode编码</li>
+<li>==整数型字面值默认是int类型==，要用long类型在字面值后加L </li>
+<li>整数型字面值以0开头，后面的数字是八进制的表示形式<br>整数型字面值以0x开头，后面的数字是十六进制的表示形式 </li>
+<li>整数型的小容量可以自动转换成大容量，成为==自动类型转换==;<br>大容量转换小容量会编译报错，需要加==强制类型转换符==，这样编译通过，但运行阶段强制转换可能导致==精度损失==，谨慎使用;<br>强制转换表示方法：在数字前加 （转换的类型） 如（int）强制转换成int类型;<br>整数型字面值没有超出==byte，short,char==的取值范围，可以直接赋值，无需强转; </li>
+<li>浮点型数据类型<br> float 单精度（使用时在字面值后加==F/f==）<br> double 双精度（浮点型字面值默认使用<br> java.math.BigDecimal 更高精度，用于财务软件  </li>
+<li>布尔型数据类型<br>只有true 和 false<br>在实际开发中一般用于逻辑运算和条件控制语句  </li>
+<li>基本数据类型的转换</li>
+</ol>
+<ul>
+<li>除布尔类型外其他的可以相互转换</li>
+<li>小容量向大容量转换称为自动类型转换（任何浮点型都比整数型容量大）</li>
+<li>大容量向小容量转换称为强制类型转换，需要加强制类型转换符</li>
+<li>整数型字面值没有超出byte，short,char的取值范围，可以直接赋值，无需强转</li>
+<li>byte，short,char混合运算时，各自先转换成int类型再运算</li>
+<li>多种数据类型混合运算，先转换成容量最大的再运算</li>
+<li>容量大小：byte&lt;short&lt;int&lt;long&lt;float&lt;double&lt;char(char和short能表示的种类数量相同，但char能表示更大的正整数)</li>
+<li>==编译期只检查语法，不管计算结果，运行过程==  </li>
+</ul>
+<ol start="23">
+<li>算术运算符<br>+（求和） -（相减） * （乘积）  / ( 商)   %( 余数/取模)   ++（自加1）  –（自减1）<br>++运算符可以在变量的前面或后面，只要++运算结束，变量自 加1<br>++出现在变量后且又有赋值运算则先做赋值运算，再对变量保存的值进行自加1运算<br>++出现在变量前且又有赋值运算则先对变量保存的值进行自加1运算，再做赋值运算 </li>
+<li>关系运算符（结果一定是布尔类型）<br>&lt; （小于） &lt;=    &gt;  (大于)    &gt;=    ==（等于）  !=（不等于）<br>=  赋值运算符<br>==  关系运算符<br>注：比较的是变量中保存的值 </li>
+<li>逻辑运算符<br>&amp;     逻辑与   （两边的算子都true。结果才是true）<br>|      逻辑或  （两边的算子只要有一个是true，结果就是true）<br>!       逻辑非       （取反）<br>^      逻辑异或  （两边的算子只要不一样，结果就是true）<br>&amp;&amp;   短路与<br>||     短路或</li>
+</ol>
+<ul>
+<li>逻辑运算符要求两边的算子是布尔类型</li>
+<li>短路与和逻辑与的运算结果相同</li>
+<li>短路或和逻辑或的运算结果相同</li>
+<li>逻辑与的两边的算子一定都会执行，短路与的第一个算子若为false，则第二个算子                      不执行，这种现象称为短路</li>
+<li>短路或：第一个算子结果为true，发生短路或（第二个算子不执行）<br> 短路与：第一个算子结果为false ,发生短路与 </li>
+</ul>
+<ol start="26">
+<li>赋值运算符<br>基本赋值运算符 ：=<br>扩展的赋值运算符： + =   - =  * =   % =  / =<br>优先级 ： 先执行等号右边的表达式，再将值赋值给左边的变量（赋值时会有类型转换，可能损失精度）<br>扩展类的赋值运算符不改变运算结果的数据类型，变量最初什么类型，结果还是这个类型； </li>
+<li>字符串的连接运算符<br>+号运算符的作用：两边的数据都是数字，进行加法运算；两边的数据只要有一个是字符     串，进行字符串连接运算<br>运算没有小括号时，从左到右依次运算 </li>
+<li>三元运算符/三元运算符/条件运算符<br>表示： 布尔表达式 ？ 表达式1 ：表达式2<br>原理：当布尔表达式结果为true,选择表达式1作为整个表达式的执行结果<br>当布尔表达式结果为false,选择表达式2作为整个表达式的执行结果</li>
+</ol>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/11/Day1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
