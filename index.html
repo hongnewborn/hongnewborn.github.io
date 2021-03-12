@@ -172,44 +172,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>控制语句<br>    * 选择结构<br>        if, if..else<br>        switch<br>    * 循环结构<br>        for<br>        while<br>        do..while()<br>    * 控制循环的语句<br>        break<br>        continue</p>
-<h1 id="第一节-if语句"><a href="#第一节-if语句" class="headerlink" title="第一节 if语句"></a>第一节 if语句</h1><ol>
+        <p>控制语句</p>
+<ul>
+<li>选择结构<br>  if, if..else<br>  switch</li>
+<li>循环结构<br>  for<br>  while<br>  do..while()</li>
+<li>控制循环的语句<br>  break<br>  continue<h1 id="第一节-if语句"><a href="#第一节-if语句" class="headerlink" title="第一节 if语句"></a>第一节 if语句</h1></li>
+</ul>
+<ol>
 <li>语句结构</li>
-<li>1<br>  (```)<br>  if(布尔表达式){<pre><code>  java语句；
-  java语句；
-  ...
-</code></pre>
-  }<br>  (```)</li>
-<li>2<br>  (```)<br>  if(布尔表达式){<pre><code>  java语句；
-  java语句；
-</code></pre>
-  }else{<pre><code>  java语句；
-  java语句;
-</code></pre>
-  }<br>  (```)</li>
-<li>3<br>  (```)<br>  if(布尔表达式){<pre><code>  java语句；
-  java语句;
-</code></pre>
-  }else if(布尔表达式){<pre><code>  java语句;
-  java语句;
-</code></pre>
-  }else if(布尔表达式){<pre><code>  java语句;
-  java语句;
-</code></pre>
-  }…<br>  (```)</li>
-<li>4<br>  (```)<br>  if(布尔表达式){<pre><code>  java语句；
-  java语句;
-</code></pre>
-  }else if(布尔表达式){<pre><code>  java语句;
-  java语句;
-</code></pre>
-  }else if(布尔表达式){<pre><code>  java语句;
-  java语句;
-</code></pre>
-  }else{<pre><code>  java语句;
-  java语句;
-</code></pre>
-  }…<br>  (```)</li>
+</ol>
+<ul>
+<li>(<code>) if(布尔表达式)&#123;   java语句；   java语句；   ... &#125; (</code>)</li>
+<li>(<code>) if(布尔表达式)&#123;   java语句；   java语句； &#125;else&#123;   java语句；   java语句; &#125; (</code>)</li>
+<li>(<code>) if(布尔表达式)&#123;   java语句；   java语句; &#125;else if(布尔表达式)&#123;   java语句;   java语句; &#125;else if(布尔表达式)&#123;   java语句;   java语句; &#125;... (</code>)</li>
+<li>(<code>) if(布尔表达式)&#123;   java语句；   java语句; &#125;else if(布尔表达式)&#123;   java语句;   java语句; &#125;else if(布尔表达式)&#123;   java语句;   java语句; &#125;else&#123;   java语句;   java语句; &#125;... (</code>)    </li>
+</ul>
+<ol start="2">
 <li>对于java的if语句来说，只要有一个分支执行，整个if语句全部结束；</li>
 <li>第二和第四种方法带有else结构，一定会有一个分支执行</li>
 <li>所有控制语句均可嵌套使用</li>
@@ -217,27 +195,7 @@
 <li>if语句的括号中只能是布尔表达式即true或false</li>
 </ol>
 <h1 id="第二节-switch语句"><a href="#第二节-switch语句" class="headerlink" title="第二节 switch语句"></a>第二节 switch语句</h1><ol>
-<li>语法结构<br> (```)<br> switch(int或string类型的字面值或变量){<pre><code> case int或string类型的字面值或变量 :
-     java语句;
-     java语句;
-     ...
-     break;
- case int或string类型的字面值或变量 :
-     java语句;
-     java语句;
-     ...
-     break;
- case int或string类型的字面值或变量 :
-     java语句;
-     java语句;
-     ...
-     break;
- ...
- default :
-     java语句;
-     ...
-</code></pre>
- }<br> (```)</li>
+<li>语法结构<br>(<code>) switch(int或string类型的字面值或变量)&#123; case int或string类型的字面值或变量 :  java语句;  java语句;  ...  break; case int或string类型的字面值或变量 :  java语句;  java语句;  ...  break; case int或string类型的字面值或变量 :  java语句;  java语句;  ...  break; ... default :  java语句;  ... &#125; (</code>)</li>
 <li>执行原理：switch小括号中的数据和case后面的数据进行匹配，匹配成功的分支执行，按从上到下顺序依次匹配</li>
 <li>匹配成功的分支执行，该分支最后有break语句，则整个switch语句结束；</li>
 <li>匹配成功的分支执行，该分支最后没有break语句，则直接进入下一个分支执行（不必进行匹配），这种现象称为case穿透现象。（break可以避免穿透）</li>
@@ -247,25 +205,19 @@
 </ol>
 <h1 id="第三节-for循环结构"><a href="#第三节-for循环结构" class="headerlink" title="第三节 for循环结构"></a>第三节 for循环结构</h1><ol>
 <li>循环结构：当程序中有一些需要反复的/重复的执行的代码，将代码片段放到“循环体”中，再利用“计数器”，共同控制这些需要反复执行的代码，这样就不需要重复编写代码。</li>
-<li>语法结构：<br> (```)<br> for(初始化表达式 ;布尔表达式 ;更新表达式){<pre><code> //需要重复执行的代码（循环体：java语句构成）
-</code></pre>
- }<br> (```)</li>
+<li>语法结构：<br>(<code>) for(初始化表达式 ;布尔表达式 ;更新表达式)&#123;  //需要重复执行的代码（循环体：java语句构成） &#125; (</code>)</li>
 <li>执行原理：<br> 3.1 初始化表达式，布尔表达式，更新表达式都不是必须的，但两个分号是必须的<br> 3.2 初始化表达式最先执行，并且在for循环中只执行一次<br> 3.3 布尔表达式必须是true或false，不能是其他值<br> 3.4 执行过程：初始化表达式最先执行，并且只执行一次。再判断布尔表达式，若为true,则执行循环体。然后对更新表达式进行更新即执行，这样为一次循环的完整过程，接着再判断布尔表达式，接着为以上过程的重复，直到布尔表达式为false,则循环体不执行，for循环结束。上述过程无论什么时候布尔表达式为false，for循环不执行或循环结束。</li>
 <li>只在for循环中声明的变量（即括号中），其作用域只是在for循环中，出来for循环无法访问</li>
 <li>for循环可以嵌套，但外层循环和内层循环变量名不能重名；</li>
 <li>内层循环是外层循环的循环体</li>
 </ol>
 <h1 id="第四节-while语句"><a href="#第四节-while语句" class="headerlink" title="第四节 while语句"></a>第四节 while语句</h1><ol>
-<li>语法结构：<br> (```)<br> while(布尔表达式){<pre><code> 循环体;
-</code></pre>
- }<br> (```)</li>
+<li>语法结构：<br>(<code>) while(布尔表达式)&#123;  循环体; &#125; (</code>)</li>
 <li>执行原理：先判断布尔表达式，若为true,则执行循环体，若为false,则循环结束或不执行。布尔表达式若为true,则执行循环体，执行完循环体，为一次while循环结束。之后再对布尔表达式进行判断，重复上述过程。</li>
 <li>循环次数：0~n次（while循环可能执行次数为0即一次也不执行）</li>
 </ol>
 <h1 id="第五节-do-while循环"><a href="#第五节-do-while循环" class="headerlink" title="第五节 do . . while循环"></a>第五节 do . . while循环</h1><ol>
-<li>语法结构：<br> (```)<br> do{<pre><code> 循环体;
-</code></pre>
- }while(布尔表达式);<br> (```)</li>
+<li>语法结构：<br>(<code>) do&#123;  循环体; &#125;while(布尔表达式); (</code>)</li>
 <li>执行原理</li>
 <li>执行次数：循环体执行次数为：1~n次（至少1次）</li>
 <li>注意事项：循环语句最终有一个==“分号”== </li>
@@ -279,13 +231,12 @@
 <li>默认情况下，break语句终止的是离它最近的一个循环</li>
 <li>可以终止特定的循环，但需要给循环起名，例如：循环名称 : for循环   终止语法：break 循环名称；</li>
 </ol>
-<p>#第七节 continue语句</p>
-<ol>
+<h1 id="第七节-continue语句"><a href="#第七节-continue语句" class="headerlink" title="第七节 continue语句"></a>第七节 continue语句</h1><ol>
 <li>continue表示：继续/下一个</li>
 <li>语法：continue;  作为完整的java语句，出现在循环语句用来控制循环的执行</li>
 <li>break与continue的区别：<ul>
 <li>break表示循环不执行了（循环语句终止，跳出循环）</li>
-<li>continue表示直接进入下次循环继续进行（本次循环终止，不执行下面的语句，但会执行下一次循环）</li>
+<li>continue表示直接进入下次循环继续进行（本次循环终止，不执行下面的语句，但会执行下一次循环）    </li>
 </ul>
 </li>
 <li>终止特定循环：continue 循环名称;</li>
