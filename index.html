@@ -152,6 +152,231 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Day4-面向对象（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/14/Day4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%80%EF%BC%89/">Day4_面向对象（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/14/Day4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2021-03-14T00:39:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第一节-总述"><a href="#第一节-总述" class="headerlink" title="第一节 总述"></a>第一节 总述</h1><ol>
+<li><p>面向过程：主要关注点是：实现的具体过程，因果关系【集成显卡的开发思路】</p>
+<ul>
+<li>优点：对于业务逻辑比较简单的程序，可以达到快速开发，前期投入成本较低。</li>
+<li>缺点：采用面向过程的方式开发很难解决非常复杂的业务逻辑，另外面向过程的方式导致软件元素之间的“耦合度”非常高，只要其中一环出问题，整个系统受到影响，导致最终的软件“扩展力”差。另外，由于没有独立体的概念，所以无法达到组件复用。</li>
+</ul>
+</li>
+<li><p>面向对象：主要关注点是：主要关注对象【独立体】能完成哪些功能。【独立显卡的开发思路】</p>
+<ul>
+<li>优点：耦合度低，扩展力强。更容易解决现实世界当中更复杂的业务逻辑。组件复用性强。</li>
+<li>缺点：前期投入成本较高，需要进行独立体的抽取，大量的系统分析与设计。</li>
+</ul>
+</li>
+<li><p>面向对象的三大特征：</p>
+<ul>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ul>
+</li>
+<li><p>采用面向对象的方式开发一个软件，生命周期当中：【整个生命周期中贯穿使用OO面向对象方式】</p>
+<ul>
+<li>面向对象的分析：OOA</li>
+<li>面向对象的设计：OOD</li>
+<li>面向对象的编程：OOP</li>
+</ul>
+</li>
+<li><p>类和对象的概念</p>
+<ul>
+<li>什么是类？<ul>
+<li>类是一个模板，是一个概念，是抽象的</li>
+<li>类代表了一类事物，==是某些事物的共同特征的抽象集合，描述的是对象的共同特征==</li>
+</ul>
+</li>
+<li>什么是对象？<ul>
+<li>对象是实际存在的个体。现实世界当中实际存在。</li>
+</ul>
+</li>
+<li>类–【实例化】-&gt;对象</li>
+<li>对象又被称为实例/instance</li>
+<li>对象–【抽象】–&gt;类</li>
+<li>一个类主要描述的是 状态 + 动作。<br>  状态–&gt; 一个类的属性<br>  动作–&gt; 一个类的方法</li>
+<li>类{<br>  属性; //描述对象的状态信息<br>  方法; //描述对象的动作信息<br>  }<br>  注意：状态和动作当具体到某个对象上之后，发现最终的结果可能不一样。<br>  对象和对象之间有共同特征，但是具体到对象之后有数据的差异。</li>
+</ul>
+</li>
+<li><p>类的定义【从这里开始编写代码】</p>
+<ul>
+<li>语法结构：<br>  [修饰符列表] class 类名{<br>  属性;<br>  方法;<br>  }</li>
+<li>属性通常是采用一个变量的形式来完成定义的。（数据类型 变量名）<br>  注：成员变量若没有赋值，系统会赋默认值</li>
+<li>作为创建对象的模版，这样的类一般不写主方法</li>
+</ul>
+</li>
+</ol>
+<h1 id="第二节-对象的创建和使用"><a href="#第二节-对象的创建和使用" class="headerlink" title="第二节 对象的创建和使用"></a>第二节 对象的创建和使用</h1><ol>
+<li>成员变量：变量定义在类体之中，方体体之外</li>
+<li>实例变量：不能直接通过“类”去访问</li>
+<li>对象又称为实例，实例变量又称对象变量</li>
+<li>不创建对象，实例变量的内存空间不存在，只有创建了对象，实例变量的内存空间才会创建</li>
+<li>一个类可以实例化N个对象</li>
+<li>实例化对象的语法：  ==  new 类名();  ==（其实是 new 构造方法名（实参列表））</li>
+<li>new是一个运算符，作用是创建对象，在JVM的堆内存开辟新的内存空间</li>
+<li>JVM内存空间<ul>
+<li>方法区内存：类加载时，class字节码文件被加载到该内存空间</li>
+<li>栈内存：局部变量；方法代码执行式在栈中压栈，在栈中给方法分配内存空间</li>
+<li>堆内存：存储通过new创建的对像<br>说明：1. 三块内存中变化最频繁的是栈内存，最先有数据的是方法区内存，垃圾回收器主要针对的是堆内存</li>
+</ul>
+ 2.堆内存和方法区内存各只有一个，一个线程就有一个栈内存</li>
+<li>例： Student  s  =  new  Student();<ul>
+<li>Student是一种数据类型，是引用数据类型</li>
+<li>s 是一个变量名，是局部变量，通常叫做==引用==</li>
+<li>new Student() 是一个具体的对象</li>
+<li>对象存储在new运算符在堆内存中开辟的内存空间</li>
+<li>引用是一个变量，这个变量存储的是另一个==对象的内存地址==，这个内存地址指向堆内存的对象<ul>
+<li>==引用可以是局部变量，也可以实例变量==</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>java语言不能直接操作堆内存，只能通过“引用”去访问堆内存当中对象的实例变量</li>
+<li>访问实例变量的语法：<ul>
+<li>读取数据：引用.变量名</li>
+<li>修改数据：引用.变量名 = 值</li>
+<li>引用也是一种变量，可有：引用.引用.变量名（相对于上面的语句，是某个变量是引用，进而可以访问个引用所表示的对象的实例变量）（ 理解：引用存储的是内存地址可以传递，叠加）（不同的对象之间的联系）</li>
+</ul>
+</li>
+<li>对象的创建是依据类的模版，一个类创建的不同对象是彼此独立的，有不同的内存空间</li>
+<li>实例变量是一个变量，储存在java对象内部，必须先有对象，再通过对象访问，不能通过类去访问（java对象存储在堆内存，==实例变量也存储在堆内存==）</li>
+<li>只要有类，有相应的引用，就有相应的引用数据类型（可以理解为声明变量，声明引用） ，（可以new对象)</li>
+<li>成员变量之实例变量只定义没手动赋值，系统会赋默认值。这种变量必须先有对象才有实例变量。（系统默认赋值不是在类加载的时候，这时，只加载了代码片段，还没来得及创建对象，所以实例变量并没有初始化。实际上，实例变量的内存空间是在构造方法执行过程中开辟的，完成初始化。系统赋默认值时，也是在构造方法执行过程中完成的赋值）</li>
+<li>变量分类：<ul>
+<li>局部变量：方法体中声明</li>
+<li>成员变量：方法体中声明，类体中声明<ul>
+<li>实例变量：前面没有修饰符static</li>
+<li>静态变量：前面有修饰符static  （静态变量存储在方法区内存中）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>垃圾回收器（自动垃圾回收机制，GC机制）<ul>
+<li>当堆内存中的java对象称为垃圾数据的时候，会被垃圾回收器回收</li>
+<li>当没有更多的引用指向java对象时，这个对象就无法访问，就成为垃圾数据</li>
+</ul>
+</li>
+<li>空引用访问实例相关的数据一定会出现==空指针异常（java.lang.NullPointerException）==</li>
+<li>实例相关的数据指的是这个数据访问是必须有对象的参与</li>
+</ol>
+<h1 id="第三节-对象的封装"><a href="#第三节-对象的封装" class="headerlink" title="第三节 对象的封装"></a>第三节 对象的封装</h1><ol>
+<li>封装的好处：<ul>
+<li>封装后，对于事物来说，就看不到事物比较复杂的一面，只能看到事物比较简单的一面。复杂性封装，对外提供简单的操作入口。使用者不需要了解内部的实现原理，只需要了解操作方法即可。</li>
+<li>封装之后才形成真正的对象，真正的独立体</li>
+<li>封装就意味着以后的程序可以重复使用，并且这个事物的适应性较强，任何场合都可以使用</li>
+<li>封装之后，对于事物本身，提高了安全性</li>
+</ul>
+</li>
+<li>封装的步骤<ul>
+<li>所有属性私有化，使用private关键字进行修饰，private表示私有的，修饰的所有数据只能在本类中访问，不能再外部直接访问</li>
+<li>对外提供简单的操作入口，外部程序想要访问私有化的属性，必须通过这些入口访问（提供两个公开的方法）<ul>
+<li>想要修改属性，调用set方法（将相应的方法的方法名的前面加set）</li>
+<li>想要读取属性，调用get方法（将相应的方法的方法名的前面加get）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>set方法的命名规范<br> public void setAge(int a){<br> age = a;<br> }</li>
+<li>set方法的命名规范<br> public int getAge(){<br> return age;<br> }</li>
+<li><ul>
+<li>setter and getter 方法没哟static关键字</li>
+<li>有static关键字修饰的方法调用：类名.方法名（实参）</li>
+<li>没有static关键字修饰的方法调用：引用.方法名（实参）</li>
+</ul>
+</li>
+<li>在外部使用加了set和get的方法修改和读取私有属性</li>
+</ol>
+<h1 id="第四节-构造方法"><a href="#第四节-构造方法" class="headerlink" title="第四节 构造方法"></a>第四节 构造方法</h1><ol>
+<li>构造方法又称构造函数/构造器/Constructor</li>
+<li>构造方法语法结构<br> [修饰符列表]  构造方法名（形式参数列表）{<br> 构造方法体<br> }</li>
+<li>普通方法的语法结构<br> [修饰符列表]  返回值类型 方法名（形式参数列表）{<br> 方法体<br> }</li>
+<li>对于构造方法来说，返回值类型不需要指定，也不能写void，只有写上void，这个方法就成为了普通方法</li>
+<li>对于构造方法来说，==构造方法的方法名必须与类名保持一致==</li>
+<li>构造方法存在的意义是通过构造方法的调用，可以创建对象。</li>
+<li>普通方法调用：<ul>
+<li>==有static关键字修饰的方法调用：类名.方法名（实参）==</li>
+<li>==没有static关键字修饰的方法调用：引用.方法名（实参）==</li>
+</ul>
+</li>
+<li>==构造方法调用：new 构造方法名（实参列表）==</li>
+<li>构造方法调用执行后实际上是有返回值的，但是这个”return 值;”语句不用写，Java语言自动返回值，并且返回值类型是构造方法所在类的类型，因为构造方法的返回值类型就是类本身，因此返回值类型不用写</li>
+<li>当一个类没有定义任何构造方法，系统默认的为这个类提供==无参数的构造方法==，这个构造方法称为==缺省构造器==</li>
+<li>当一个类显示的将构造方法定义出来，系统不再默认的为这个类提供缺省构造器。建议开发中手动的为当前类提供无参数的构造方法，因为提供无参数的构造方法太常用</li>
+<li>构造方法支持方法重载机制，在一个类中编写多个构造方法，这些构造方法构成方法重载</li>
+<li>只有构造方法调用就会创建对象，就一点在堆内存中开辟内存空间</li>
+<li>构造方法的作用<ul>
+<li>创建对象</li>
+<li>创建对象的同时，初始化实例变量的内存空间（给实例变量赋值）</li>
+</ul>
+</li>
+</ol>
+<h1 id="第五节-参数传递"><a href="#第五节-参数传递" class="headerlink" title="第五节 参数传递"></a>第五节 参数传递</h1><ol>
+<li>参数传递实际上传递的是变量中保存的数据（值）</li>
+<li>不管参数的具体形式什么或表示什么（无论什么类型），传递的一定是参数中保存的值，这个值可能是字面值，可能是内存地址</li>
+<li>变量自身有一个内存地址，保证着一个值。引用也是变量，其自身有一个内存地址，但是他保存的值比较特殊，这个值是一个内存地址，是对应的java对象在堆内存中的内存地址，这个内存地址是一个值与具体的字面值地位同等（可以理解内存地址这个值也有相应的引用数据类型）</li>
+<li>一个内存地址一个堆内存的java对象就只有一个内存地址，内存地址相同就指向同一个java对象</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/14/Day4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Day3-方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -159,13 +384,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/12/Day3-%E6%96%B9%E6%B3%95/">Day3_方法</a>
+      <a class="article-title" href="/2021/03/13/Day3-%E6%96%B9%E6%B3%95/">Day3_方法</a>
     </h1>
   
 
         
-        <a href="/2021/03/12/Day3-%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-03-12T10:57:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-12</time>
+        <a href="/2021/03/13/Day3-%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-03-13T00:57:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-13</time>
 </a>
         
       </header>
@@ -284,7 +509,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/12/Day3-%E6%96%B9%E6%B3%95/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/03/13/Day3-%E6%96%B9%E6%B3%95/">展开全文 >></a>
         </p>
       
 
@@ -327,7 +552,7 @@
 
         
         <a href="/2021/03/12/Day2-%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
-  	<time datetime="2021-03-12T07:08:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-12</time>
+  	<time datetime="2021-03-12T00:08:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-12</time>
 </a>
         
       </header>
